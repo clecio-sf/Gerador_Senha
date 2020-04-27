@@ -3,13 +3,6 @@ const tamanho = document.querySelector('.tamanho')
 let letras = 'abcdefghijklmnopqrtuwxyz'
 
 
-// tamanho.addEventListener('keypress', function (e) {
-//   if (e.keycode === 13) {
-//     if (!tamanho.value) return
-//     makePass(tamanho.value)
-//   }
-// })
-
 // pega todos os clicks
 document.addEventListener('keypress', function (e) {
   const elemento = e.target
