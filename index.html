@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container text-center mt-5">
+    <h1 class="display-4">Lorem ipsum dolor sit.</h1>
+    <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      Corrupti eligendi similique ratione.</p>
+  </div>
+  <div class="container mt-4 senha">
+    <h1 class="geraSenha">Senha vem aqui</h1>
+  </div>
+  <div class="container custom mt-4">
+    <h4 class="mt-3">Lorem ipsum dolor sit.</h4>
+    <hr>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> Tamanho da Senha</span>
+          </div>
+          <input class="form-control tamanho" type="text" placeholder="tamanho">
+        </div>
+      </div>
+
+      <!-- checkbox -->
+      <div class="form-group col-md-5 ml-4 mt-1">
+        <div class="custom-control custom-switch custom-switch-md">
+          <input type="checkbox" class="custom-control-input maiuscula" id="letraMaiuscula" checked>
+          <label class="custom-control-label" for="letraMaiuscula">Letra Maiúscula</label>
+        </div>
+        <div class="custom-control  custom-switch custom-switch-md">
+          <input type="checkbox" class="custom-control-input minuscula" id="letraMinuscula" checked>
+          <label class="custom-control-label" for="letraMinuscula">Letra Minúscula</label>
+        </div>
+        <div class="custom-control custom-switch custom-switch-md">
+          <input type="checkbox" class="custom-control-input numero" id="numeros" checked>
+          <label class="custom-control-label" for="numeros">Números</label>
+        </div>
+        <div class="custom-control custom-switch custom-switch-md">
+          <input type="checkbox" class="custom-control-input simbolo" id="simbolos" checked>
+          <label class="custom-control-label" for="simbolos">Simbolos</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <!-- jQuery primeiro, Popper.js, Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
