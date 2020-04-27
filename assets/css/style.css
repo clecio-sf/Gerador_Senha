@@ -6,6 +6,14 @@
   border: 1px solid #eaeaea;
 }
 
+.progress-md {
+  height: 0.6rem !important;
+  width: auto;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 14px;
+}
+
 .custom {
   height: 300px;
 }
