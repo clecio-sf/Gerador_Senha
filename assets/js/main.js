@@ -16,6 +16,7 @@ minuscula = document.querySelector('.minuscula')
 //   console.log(this.checked);
 // });
 
+// passa o tamanho da senha como parametro
 tamanho.addEventListener('keypress', function (e) {
   if (e.which == 13) {
     if (!tamanho.value) return
