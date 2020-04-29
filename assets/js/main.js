@@ -7,14 +7,16 @@ document.getElementById("teste").addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function (e) {
-  pass.innerHTML = exec(tamanho.value);
+  document.getElementById("result").value = exec(tamanho.value);
+  // pass.innerHTML = exec(tamanho.value);
 });
 
 // passa o tamanho da senha como parametro
 tamanho.addEventListener("keypress", function (e) {
   if (e.which == 13) {
     if (!tamanho.value) return;
-    pass.innerHTML = exec(tamanho.value);
+    // pass.innerHTML = exec(tamanho.value);
+    document.getElementById("result").value = exec(tamanho.value);
   }
 });
 

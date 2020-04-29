@@ -7,20 +7,38 @@
   overflow-x: auto;
 }
 
+.f {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+/* .icon {
+  margin-left: 540px;
+  margin-bottom: ;
+}
+/*  */
+
 button {
   border: none;
   background: 0.0;
+  /* margin-bottom: 500px; */
 }
 
 button:focus {
   outline: none;
 }
 
+#result {
+  border: none;
+  margin-top: 40px;
+  width: 470px;
+}
+
 .icon {
-  padding-top: 55px;
-  /* position: fixed; */
   float: right;
   color: rgb(59, 91, 152);
+  /* position: fixed; */
+  margin-top: 70%;
 }
 
 .barra {
@@ -40,9 +58,9 @@ button:focus {
   border-radius: 14px;
 }
 
-.custom {
+/* .custom {
   height: 300px;
-}
+} */
 
 /* for md */
 
