@@ -1,73 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
 
-  <!-- Bootstrap css -->
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <div class="container text-center mt-5">
-    <h1 class="display-4">Lorem ipsum dolor sit.</h1>
-    <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Corrupti eligendi similique ratione.</p>
-  </div>
-  <div class="container mt-4 senha">
-    <h1 class="geraSenha mt-5">resultado</h1>
-    <div class="progress progress-md text-center">
-      <div class="progress-bar progress-bar-striped bg-primary t" role="progressbar" 
-      width="30%" aria-valuemin="0" aria-valuemax="100">
+  <body>
+    <div class="container text-center mt-3 col-11">
+      <h1 class="display-4">Gerador de Senha</h1>
+      <p class="lead">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti
+        eligendi similique ratione.
+      </p>
+    </div>
+    <div class="container mt-4 senha col-11 resultado">
+      <!-- <span class="icon"></span> -->
+      <button class="icon" id="teste">
+        <i class="fas fa-copy fa-2x"></i>
+      </button>
+      <h1 class="geraSenha mt-5" id="aqui">resultado</h1>
+    </div>
+    <div class="container barra col-11">
+      <div class="progress progress-md text-center">
+        <div
+          class="progress-bar progress-bar-animated progress-bar-striped t"
+          id="progress"
+          role="progressbar"
+          width="30%"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
       </div>
     </div>
-  </div>
 
-  <div class="container custom mt-4">
-    <h4 class="mt-3">Lorem ipsum dolor sit.</h4>
-    <hr>
+    <div class="container h-auto custom mb-5 col-11">
+      <h4 class="mt-3">Lorem ipsum dolor sit.</h4>
+      <hr />
 
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> Tamanho da Senha</span>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> Tamanho da Senha</span>
+            </div>
+            <input
+              class="form-control tamanho"
+              id="a"
+              type="text"
+              placeholder="tamanho"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              value="12"
+              autofocus
+            />
           </div>
-          <input class="form-control tamanho" type="text" placeholder="tamanho">
+        </div>
+
+        <!-- checkbox -->
+        <div class="form-group col-md-5 ml-4 mt-1">
+          <div class="custom-control custom-switch custom-switch-md">
+            <input
+              type="checkbox"
+              class="custom-control-input maiuscula"
+              id="letraMaiuscula"
+              checked
+            />
+            <label class="custom-control-label" for="letraMaiuscula"
+              >Letra Maiúscula</label
+            >
+          </div>
+          <div class="custom-control custom-switch custom-switch-md">
+            <input
+              type="checkbox"
+              class="custom-control-input minuscula"
+              id="letraMinuscula"
+              checked
+            />
+            <label class="custom-control-label" for="letraMinuscula"
+              >Letra Minúscula</label
+            >
+          </div>
+          <div class="custom-control custom-switch custom-switch-md">
+            <input
+              type="checkbox"
+              class="custom-control-input numero"
+              id="numeros"
+              checked
+            />
+            <label class="custom-control-label" for="numeros">Números</label>
+          </div>
+          <div class="custom-control custom-switch custom-switch-md">
+            <input
+              type="checkbox"
+              class="custom-control-input simbolo"
+              id="simbolos"
+              checked
+            />
+            <label class="custom-control-label" for="simbolos">Simbolos</label>
+          </div>
         </div>
       </div>
-
-
-      <!-- checkbox -->
-      <div class="form-group col-md-5 ml-4 mt-1">
-        <div class="custom-control custom-switch custom-switch-md">
-          <input type="checkbox" class="custom-control-input maiuscula" id="letraMaiuscula" checked>
-          <label class="custom-control-label" for="letraMaiuscula">Letra Maiúscula</label>
-        </div>
-        <div class="custom-control  custom-switch custom-switch-md">
-          <input type="checkbox" class="custom-control-input minuscula" id="letraMinuscula" checked>
-          <label class="custom-control-label" for="letraMinuscula">Letra Minúscula</label>
-        </div>
-        <div class="custom-control custom-switch custom-switch-md">
-          <input type="checkbox" class="custom-control-input numero" id="numeros" checked>
-          <label class="custom-control-label" for="numeros">Números</label>
-        </div>
-        <div class="custom-control custom-switch custom-switch-md">
-          <input type="checkbox" class="custom-control-input simbolo" id="simbolos" checked>
-          <label class="custom-control-label" for="simbolos">Simbolos</label>
-        </div>
-      </div>
-      <!-- JavaScript -->
-      <!-- jQuery primeiro, Popper.js, Bootstrap JS -->
-      <script src="node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="node_modules/popper.js/dist/umd/popper.js"></script>
-      <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/main.js"></script>
-      
-</body>
-
+    </div>
+    <!-- JavaScript -->
+    <!-- jQuery primeiro, Popper.js, Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+  </body>
 </html>

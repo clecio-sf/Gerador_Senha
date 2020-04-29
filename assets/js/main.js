@@ -1,10 +1,14 @@
 const pass = document.querySelector(".geraSenha");
 const tamanho = document.querySelector(".tamanho");
-
-let maiuscula = true;
-let minuscula = true;
-let simbolos = true;
 let arrayOP = [];
+
+document.getElementById("teste").addEventListener("click", function () {
+  console.log("clicou");
+});
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  pass.innerHTML = exec(tamanho.value);
+});
 
 // passa o tamanho da senha como parametro
 tamanho.addEventListener("keypress", function (e) {
@@ -15,6 +19,11 @@ tamanho.addEventListener("keypress", function (e) {
 });
 
 function exec(num) {
+  let maiuscula = document.getElementById("letraMaiuscula").checked;
+  let minuscula = document.getElementById("letraMinuscula").checked;
+  let simbolos = document.getElementById("simbolos").checked;
+  let numero = document.getElementById("numeros").checked;
+
   if (minuscula) {
     arrayOP.push(getMinuscula);
   }
@@ -24,17 +33,19 @@ function exec(num) {
   if (simbolos) {
     arrayOP.push(getSimbolos);
   }
-  if (getNumeros) {
+  if (numero) {
     arrayOP.push(getNumeros);
   }
 
-  let teste = "";
-  for (var i = 0; i < num; i++) {
-    teste += arrayOP[i]();
+  let pass = "";
+  for (let i = 0; i < num; i++) {
+    let j = Math.floor(Math.random() * arrayOP.length);
+    pass += arrayOP[j]();
   }
-  console.log(teste);
-  verifica(teste);
-  return teste;
+
+  verifica(pass);
+  arrayOP = [];
+  return pass;
 }
 
 function getMaiuscula() {
@@ -66,22 +77,34 @@ function getRandomChar(ascii) {
     Math.floor(Math.random() * (ascii[i][1] - ascii[i][0])) + ascii[i][0]
   );
 }
-function changeClass(el, antiga, nova) {
-  el.classList.remove(antiga);
-  el.classList.add(nova);
+function remove(el) {
+  if (el.classList.contains("bg-danger")) {
+    el.classList.remove("bg-danger");
+  } else if (el.classList.contains("bg-warning")) {
+    el.classList.remove("bg-warning");
+  } else if (el.classList.contains("bg-info")) {
+    el.classList.remove("bg-info");
+  } else if (el.classList.contains("bg-success")) {
+    el.classList.remove("bg-success");
+  }
 }
 
 function strength(forca) {
-  const bar = document.querySelector(".t");
+  const bar = document.querySelector("#progress");
   console.log(bar);
+  remove(bar);
   if (forca < 30) {
     bar.setAttribute("style", "width:20%");
-    bar.setAttribute("aria-valuenow", "20");
     bar.classList.add("bg-danger");
   } else if (forca >= 30 && forca < 60) {
     bar.setAttribute("style", "width:50%");
-    bar.setAttribute("aria-valuenow", "50");
-    changeClass(bar, "bg-danger", "bg-warning");
+    bar.classList.add("bg-warning");
+  } else if (forca >= 60 && forca < 80) {
+    bar.setAttribute("style", "width:80%");
+    bar.classList.add("bg-info");
+  } else if (forca >= 80) {
+    bar.setAttribute("style", "width:100%");
+    bar.classList.add("bg-success");
   }
 }
 function verifica(senha) {
@@ -105,8 +128,11 @@ function verifica(senha) {
     forca += 25;
   }
 
-  if (senha.match(/([1-9]+)\1{1,}/)) {
-    forca += -25;
+  if (senha.length >= 7 && senha.match(/[0-9]/)) {
+    forca += 25;
+  }
+  if (senha.length > 15) {
+    forca += 30;
   }
   console.log(forca);
   strength(forca);
