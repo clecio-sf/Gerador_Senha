@@ -4,43 +4,34 @@
   height: 150px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
   border: 1px solid #eaeaea;
-  /* overflow-x: auto; */
 }
-
-/* .icon {
-  margin-left: 540px;
-  margin-bottom: ;
-}
-/*  */
 
 button {
   border: none;
   background: 0.0;
-  /* margin-bottom: 500px; */
 }
 
 button:focus {
   outline: none;
 }
 
-/* #result:focus {
+#result:focus {
   outline: none;
   outline: 0;
   box-shadow: 0 0 0 0;
-} */
+}
 
 #result {
   border: none;
   margin-top: 40px;
   width: 110%;
   font-size: 28px;
-  /* display: block; */
+  background-color: #fff;
 }
 
 .icon {
   float: right;
   color: rgb(59, 91, 152);
-  /* position: fixed; */
   margin-top: 51px;
 }
 
@@ -49,21 +40,14 @@ button:focus {
   width: 750px;
   height: 40px;
   margin-top: auto;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, .15); */
-  /* border: 1px solid #eaeaea; */
 }
 
 .progress-md {
   height: 0.6rem !important;
   width: auto;
   margin: auto;
-  /* margin-top: 40px; */
   border-radius: 14px;
 }
-
-/* .custom {
-  height: 300px;
-} */
 
 /* for md */
 
