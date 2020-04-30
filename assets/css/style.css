@@ -4,12 +4,7 @@
   height: 150px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
   border: 1px solid #eaeaea;
-  overflow-x: auto;
-}
-
-.f {
-  overflow-x: auto;
-  overflow-y: auto;
+  /* overflow-x: auto; */
 }
 
 /* .icon {
@@ -28,17 +23,25 @@ button:focus {
   outline: none;
 }
 
+/* #result:focus {
+  outline: none;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+} */
+
 #result {
   border: none;
   margin-top: 40px;
-  width: 470px;
+  width: 110%;
+  font-size: 28px;
+  /* display: block; */
 }
 
 .icon {
   float: right;
   color: rgb(59, 91, 152);
   /* position: fixed; */
-  margin-top: 70%;
+  margin-top: 51px;
 }
 
 .barra {

@@ -26,20 +26,25 @@
       </p>
     </div>
 
-    <div class="container custom">
+    <div class="container custom col-11">
       <div class="row">
-        <div class="col-10 f">
+        <div class="col-10">
           <input
+            class="form-control"
             type="text"
-            class="form-control geraSenha"
             name=""
             id="result"
             value="resultado"
           />
         </div>
         <div class="col">
-          <button class="icon" id="teste">
-            <i class="fas fa-copy"></i>
+          <button
+            class="icon"
+            id="teste"
+            data-toggle="tooltip"
+            title="Clique para copiar"
+          >
+            <i class="fas fa-copy fa-2x"></i>
           </button>
         </div>
       </div>
@@ -134,5 +139,35 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script>
+      // $(function () {
+      //   $('[data-toggle="tooltip"]').tooltip();
+      // });
+      // $('[data-toggle="tooltip"]').tooltip({
+      //   delay: {
+      //     show: 200,
+      //     hide: 50,
+      //   },
+      // });
+      $(document).ready(function () {
+        // initilizing Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Get the Tooltip
+        let btn_tooltip = $("#teste");
+
+        // Change Tooltip Text on mouse enter
+        btn_tooltip.mouseenter(function () {
+          btn_tooltip.attr("title", "Clique para copiar").tooltip("dispose");
+          btn_tooltip.tooltip("show");
+        });
+
+        // Update Tooltip Text on click
+        btn_tooltip.click(function () {
+          btn_tooltip.attr("title", "Copiado!").tooltip("dispose");
+          btn_tooltip.tooltip("show");
+        });
+      });
+    </script>
   </body>
 </html>

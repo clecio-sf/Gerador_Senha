@@ -2,8 +2,12 @@ const pass = document.querySelector(".geraSenha");
 const tamanho = document.querySelector(".tamanho");
 let arrayOP = [];
 
+// copia para area de transferencia
 document.getElementById("teste").addEventListener("click", function () {
-  console.log("clicou");
+  let resultado = document.getElementById("result");
+  resultado.select();
+  document.execCommand("copy");
+  // alert("copiado");
 });
 
 document.addEventListener("DOMContentLoaded", function (e) {
