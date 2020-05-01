@@ -10,9 +10,24 @@ document.getElementById("teste").addEventListener("click", function () {
   // alert("copiado");
 });
 
+document.addEventListener("click", function (e) {
+  const elemento = e.target;
+  if (elemento.classList.contains("maiuscula")) {
+    document.getElementById("result").value = exec(tamanho.value);
+  }
+  if (elemento.classList.contains("minuscula")) {
+    document.getElementById("result").value = exec(tamanho.value);
+  }
+  if (elemento.classList.contains("numero")) {
+    document.getElementById("result").value = exec(tamanho.value);
+  }
+  if (elemento.classList.contains("simbolo")) {
+    document.getElementById("result").value = exec(tamanho.value);
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function (e) {
   document.getElementById("result").value = exec(tamanho.value);
-  // pass.innerHTML = exec(tamanho.value);
 });
 
 // passa o tamanho da senha como parametro
@@ -97,7 +112,6 @@ function remove(el) {
 
 function strength(forca) {
   const bar = document.querySelector("#progress");
-  console.log(bar);
   remove(bar);
   if (forca < 30) {
     bar.setAttribute("style", "width:20%");
@@ -140,6 +154,5 @@ function verifica(senha) {
   if (senha.length > 15) {
     forca += 30;
   }
-  console.log(forca);
   strength(forca);
 }

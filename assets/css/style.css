@@ -1,14 +1,15 @@
-.senha, .custom {
+.senha,
+.custom {
   border-radius: 14px;
   width: 750px;
   height: 150px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   border: 1px solid #eaeaea;
 }
 
 button {
   border: none;
-  background: 0.0;
+  background: 0;
 }
 
 button:focus {
@@ -31,7 +32,7 @@ button:focus {
 
 .icon {
   float: right;
-  color: rgb(59, 91, 152);
+  color: #007bff;
   margin-top: 51px;
 }
 
@@ -74,7 +75,9 @@ button:focus {
   border-radius: calc(2rem - (1.5rem / 2));
 }
 
-.custom-switch.custom-switch-md .custom-control-input:checked~.custom-control-label::after {
+.custom-switch.custom-switch-md
+  .custom-control-input:checked
+  ~ .custom-control-label::after {
   transform: translateX(calc(1.5rem - 0.25rem));
 }
 
