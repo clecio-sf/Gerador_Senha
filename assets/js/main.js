@@ -1,31 +1,20 @@
-const pass = document.querySelector(".geraSenha");
 const tamanho = document.querySelector(".tamanho");
+const result = document.querySelector("#result");
+const checkbox = document.querySelector("#check");
+const btnCopy = document.querySelector("#teste");
 let arrayOP = [];
 
-// copia para area de transferencia
-document.getElementById("teste").addEventListener("click", function () {
-  let resultado = document.getElementById("result");
-  resultado.select();
+btnCopy.addEventListener("click", function () {
+  const clipBoard = document.querySelector("#result");
+  clipBoard.select();
   document.execCommand("copy");
-  // alert("copiado");
 });
 
-document.addEventListener("click", function (e) {
-  const elemento = e.target;
-  if (elemento.classList.contains("maiuscula")) {
-    document.getElementById("result").value = exec(tamanho.value);
-  }
-  if (elemento.classList.contains("minuscula")) {
-    document.getElementById("result").value = exec(tamanho.value);
-  }
-  if (elemento.classList.contains("numero")) {
-    document.getElementById("result").value = exec(tamanho.value);
-  }
-  if (elemento.classList.contains("simbolo")) {
-    document.getElementById("result").value = exec(tamanho.value);
-  }
+checkbox.addEventListener("click", function () {
+  result.value = exec(tamanho.value);
 });
 
+// gera uma senha ao abrir a pagina
 document.addEventListener("DOMContentLoaded", function (e) {
   document.getElementById("result").value = exec(tamanho.value);
 });
@@ -98,6 +87,7 @@ function getRandomChar(ascii) {
     Math.floor(Math.random() * (ascii[i][1] - ascii[i][0])) + ascii[i][0]
   );
 }
+
 function remove(el) {
   if (el.classList.contains("bg-danger")) {
     el.classList.remove("bg-danger");
@@ -127,6 +117,7 @@ function strength(forca) {
     bar.classList.add("bg-success");
   }
 }
+
 function verifica(senha) {
   let forca = 0;
 
