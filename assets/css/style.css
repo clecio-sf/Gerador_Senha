@@ -7,13 +7,15 @@
   border: 1px solid #eaeaea;
 }
 
-button {
+#icon {
   border: none;
   background: 0;
 }
 
-button:focus {
+#icon:focus {
   outline: none;
+  outline: 0;
+  box-shadow: 0 0 0 0;
 }
 
 #result:focus {
