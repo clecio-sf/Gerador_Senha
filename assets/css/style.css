@@ -1,5 +1,4 @@
-.senha,
-.custom {
+.senha, .custom {
   border-radius: 14px;
   width: 750px;
   height: 150px;
@@ -75,9 +74,7 @@ button:focus {
   border-radius: calc(2rem - (1.5rem / 2));
 }
 
-.custom-switch.custom-switch-md
-  .custom-control-input:checked
-  ~ .custom-control-label::after {
+.custom-switch.custom-switch-md .custom-control-input:checked~.custom-control-label::after {
   transform: translateX(calc(1.5rem - 0.25rem));
 }
 
