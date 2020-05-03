@@ -1,7 +1,7 @@
 const tamanho = document.querySelector(".tamanho");
 const result = document.querySelector("#result");
 const checkbox = document.querySelector("#check");
-const btnCopy = document.querySelector("#teste");
+const btnCopy = document.querySelector("#icon");
 let arrayOP = [];
 
 btnCopy.addEventListener("click", function () {
